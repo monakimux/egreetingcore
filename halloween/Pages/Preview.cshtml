@@ -1,0 +1,11 @@
+﻿@page
+@model halloween.Pages.PreviewModel
+@{
+    ViewData["Title"] = "Preview";
+}
+
+<h2>Preview</h2>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,50 @@
+body {
+    font-family: Arial;
+    font-size: 14px;
+    background: #000;
+}
+
+a {
+    color: #333;
+}
+
+    a:link,
+    a:visited,
+    a:active,
+    a:hover a:focus {
+        color: #0026ff;
+    }
+
+
+
+.card {
+    background: pink url(/images/halloween.jpg) no-repeat top center;
+    background-size: cover;
+    display: block;
+}
+
+
+.panel-header {
+    text-align: center;
+    padding: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/*.panel {
+    margin: 1em;
+    border: unset;
+    box-shadow: #000 0 2px 3px;
+}
+.panel-body {
+    background: rgba(0, 0, 0, 0.5);
+}*/
+
+.field-validation-valid {
+    color: #cc0000;
+    text-transform: uppercase;
+}
+
+
+
+
+

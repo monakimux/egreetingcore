@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+<div class="container">
+    <h1 class="text-center">Send this Halloween Greeting to a friend!</h1>
+    <div class="row">
+        <!--Card-->
+        <div class="col-xs-12 col-md-8 mediabox">
+            <div class="embed-responsive embed-responsive-4by3">
+            <img src="~/images/halloween.gif" class="img-responsive" alt="ghouls" style="width:100%">
+			</div>
+        </div>
+        <!--Form-->
+        <div class="col-xs-12 col-md-4 textbox">
+            @if (Model.isPreviewPage)
+            {
+                @Html.Partial("_Preview")
+            }
+            else
+            {
+                @Html.Partial("_Form")
+
+
+
+                @section Scripts {
+                    <script src="~/js/ww-form-character-countdown.js"></script>
+                    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+                    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+                }
+        </div>
+    </div>
+</div>
