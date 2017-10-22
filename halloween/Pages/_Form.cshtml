@@ -2,76 +2,74 @@
 
     <form method="post">
 	<div class="panel">
-		        <div class="panel-body">
-    	<div class="form-group">
-    		<label asp-for="bridgeGreetings.fromName" class="col-2"></label>
-    		<div class="col-10">
-                    <input type="text" asp-for="bridgeGreetings.fromName" class="form-control"  maxlength="100"/>
+		<div class="panel-body">
+			<div class="form-group">
+				<label asp-for="bridgeGreetings.fromName" class="col-2"></label>
+				<div class="col-10">
+					<input type="text" asp-for="bridgeGreetings.fromName" class="form-control"  maxlength="100"/>
                     <span asp-validation-for="bridgeGreetings.fromName" class="text-danger"></span>
-    			<div class="countdown"></div>
-    		</div>
-    	</div>
-
-    	<div class="form-group">
-            <label asp-for="bridgeGreetings.fromEmail" class="col-2"></label>
-            <div class="col-10">
-                    <input type="text" asp-for="bridgeGreetings.fromEmail" class="form-control"  maxlength="100"/>
+					<div class="countdown"></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label asp-for="bridgeGreetings.fromEmail" class="col-2"></label>
+				<div class="col-10">
+					<input type="text" asp-for="bridgeGreetings.fromEmail" class="form-control"  maxlength="100"/>
                     <span asp-validation-for="bridgeGreetings.fromEmail" class="text-danger"></span>
-                <div class="countdown"></div>
-            </div>
-        </div>
+					<div class="countdown"></div>
+				</div>
+			</div>
 
-    	<div class="form-group">
-            <label asp-for="bridgeGreetings.toName" class="col-2"></label>
-            <div class="col-10">
-                    <input type="text" asp-for="bridgeGreetings.toName" class="form-control"  maxlength="100"/>
+			<div class="form-group">
+				<label asp-for="bridgeGreetings.toName" class="col-2"></label>
+				<div class="col-10">
+					<input type="text" asp-for="bridgeGreetings.toName" class="form-control"  maxlength="100"/>
                     <span asp-validation-for="bridgeGreetings.toName" class="text-danger"></span>
-                <div class="countdown"></div>
-            </div>
-        </div>
+					<div class="countdown"></div>
+				</div>
+			</div>
 
-    	<div class="form-group">
-            <label asp-for="bridgeGreetings.toEmail" class="col-2"></label>
-            <div class="col-10">
+			<div class="form-group">
+				<label asp-for="bridgeGreetings.toEmail" class="col-2"></label>
+				<div class="col-10">
                     <input type="text" asp-for="bridgeGreetings.toEmail" class="form-control"  maxlength="100"/>
                     <span asp-validation-for="bridgeGreetings.toEmail" class="text-danger"></span>
-                <div class="countdown"></div>
-            </div>
-        </div>
+					<div class="countdown"></div>
+				</div>
+			</div>
 
-    	   <div class="form-group">
-            <label asp-for="bridgeGreetings.subject" class="col-2"></label>
-            <div class="col-10">
+			<div class="form-group">
+				<label asp-for="bridgeGreetings.subject" class="col-2"></label>
+				<div class="col-10">
                     <input type="text" asp-for="bridgeGreetings.subject" class="form-control"  maxlength="100"/>
                     <span asp-validation-for="bridgeGreetings.subject" class="text-danger"></span>
-                <div class="countdown"></div>
-            </div>
-        </div>
-        
+					<div class="countdown"></div>
+				</div>
+			</div>
 
-     <div class="form-group">
-                        <label asp-for="bridgeGreetings.message" class="col-2"></label>
-                        <div class="col-10">
-                            <textarea asp-for="bridgeGreetings.message" class="form-control" maxlength="140"></textarea>
-                            <span asp-validation-for="bridgeGreetings.message" class="text-danger"></span>
-                            <div class="countdown"></div>
-                        </div>
-                    </div>
-    	
-                    <div class="checkbox-inline">
-                        <label>
-                        <input type="checkbox" asp-for="bridgeGreetings.tandcagree" value="">I agree to the <a>Terms and Conditions</a>
+			<div class="form-group">
+				<label asp-for="bridgeGreetings.message" class="col-2"></label>
+				<div class="col-10">
+					<textarea asp-for="bridgeGreetings.message" class="form-control" maxlength="140"></textarea>
+					<span asp-validation-for="bridgeGreetings.message" class="text-danger"></span>
+					<div class="countdown"></div>
+				</div>
+			</div>
+
+			<div class="checkbox-inline">
+				<label>
+					<input type="checkbox" asp-for="bridgeGreetings.tandcagree">I agree to the <a>Terms and Conditions</a>
 					<span asp-validation-for="bridgeGreetings.tandcagree" class="text-danger"></span>
-                        </label>
-                        </div>
-                    <div class="g-recaptcha" data-sitekey="6LeO8zAUAAAAAGSJRmMOqIAv3eVYD6LJp5KrxV0l"></div>
-                    </div>
+				</label>
+			</div>
+
+			<div class="g-recaptcha" data-sitekey="6LeO8zAUAAAAAGSJRmMOqIAv3eVYD6LJp5KrxV0l"></div>
 		</div>
-		        <div class="panel-footer">
-                <input type="submit" value="Next" class="btn btn-primary" />
-                <a href="/">Start Over</a>
-            </div>
-        </div>
+
+		<div class="panel-footer">
+			<input type="submit" value="Next" class="btn btn-primary" />
+			<a href="/">Start Over</a>
+		</div>
 	</div>
 	</form>
 

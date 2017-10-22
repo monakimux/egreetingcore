@@ -75,6 +75,10 @@ label {
     letter-spacing: 2px;
 }
 
+.img-responsive {
+    border: 10px solid white;
+}
+
 .checkbox-inline {
     color: #000;
     font-size: 1.5em;
@@ -90,7 +94,7 @@ label {
     padding: 1em;
 }
 
-.panel {
+.panel, .panel-body, .panel-footer {
     background: none;
     border: unset;
     box-shadow: none;
