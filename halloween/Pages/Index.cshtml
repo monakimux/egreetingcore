@@ -1,7 +1,5 @@
 ﻿@page
 @model IndexModel
-@{
-}
 
 <div class="container">
     <h1 class="text-center">Send this Halloween Greeting to a friend!</h1>
@@ -22,13 +20,12 @@
             {
                 @Html.Partial("_Form")
 
-
-
                 @section Scripts {
                     <script src="~/js/ww-form-character-countdown.js"></script>
                     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
                     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
                 }
-        </div>
+			}
+		</div>
     </div>
 </div>

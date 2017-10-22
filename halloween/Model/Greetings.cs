@@ -32,10 +32,12 @@ namespace halloween.Model
         public string toEmail { get; set; }
 
         [DisplayName("Subject")]
+        [Display(Prompt = "Subject")]
         [Required(ErrorMessage = "Required")]
         public string subject { get; set; }
 
-        [DisplayName("Personalized Message")]
+        [DisplayName("Message")]
+        [Display(Prompt = "Your message")]
         [Required(ErrorMessage = "Required")]
         public string message { get; set; }
 
