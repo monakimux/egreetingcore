@@ -7,11 +7,13 @@ body {
 a {
 }
 
-    a:hover {
+    a:link,
+    a:visited,
+    a:active,
+    a:hover a:focus {
+        color: #0026ff;
     }
 
-    a:focus {
-    }
 
 h1 {
     font-family: 'Permanent Marker', cursive;
@@ -33,8 +35,8 @@ h1 {
     width: 100%;
     border: 3px solid #DA8230;
     border-radius: 0;
-    padding: 10px;
-    margin: 0px auto 20px;
+    /*padding: 10px;
+    margin: 0px auto 20px;*/
     background: #F1C795;
     font-family: inherit;
     font-weight: bold;
@@ -48,9 +50,10 @@ h1 {
 
 textarea {
     resize: vertical;
+    letter-spacing: 2px;
 }
 
-button {
+input {
     padding: 20px;
     margin: 10px auto 10px;
     border-radius: 100px;
@@ -64,8 +67,12 @@ button {
     font-size: 1.5em;
 }
 
-.img-responsive {
-    border: 10px solid white;
+label {
+    text-transform: uppercase;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 2px;
 }
 
 .checkbox-inline {
@@ -81,4 +88,20 @@ button {
 .textbox {
     background-color: #ccc;
     padding: 1em;
+}
+
+.panel {
+    background: none;
+    border: unset;
+    box-shadow: none;
+}
+
+.field-validation-valid {
+    color: #cc0000;
+    text-transform: uppercase;
+}
+
+.text-danger {
+    color: #f93c11;
+    text-transform: uppercase;
 }
