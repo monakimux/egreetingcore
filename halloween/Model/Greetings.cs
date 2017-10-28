@@ -41,8 +41,9 @@ namespace halloween.Model
         [Required(ErrorMessage = "Message Required")]
         public string message { get; set; }
 
-        [Range(typeof(bool), "true", "true", ErrorMessage = "You must agree to our terms and conditions")]
-        public bool tandcagree { get; set; }
+        [Required(ErrorMessage = "Required")]
+        [StringLength(4, MinimumLength = 1, ErrorMessage = "You must agree to our terms and conditions")]
+        public string tandcagree { get; set; }
 
         [Required(ErrorMessage = "Required")]
         public string createDate { get; set; }

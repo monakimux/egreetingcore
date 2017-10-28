@@ -1,54 +1,39 @@
 ﻿    @model IndexModel
 
-    <div class="panel">
-	<div class="panel-body>
-		<div class="form-group">
-		<label asp-for="bridgeGreetings.fromName" class="col-2"></label>
-		<div class="col-10">
-			@Model.bridgeGreetings.fromName
+<div class="panel">
+	<div class="panel-body">
+		<div class="form-group row">
+			<h2 class="col-2">To: <br/></h2>
+			<div class="col-10 preview">
+				@Model.bridgeGreetings.fromName<br/>
+				@Model.bridgeGreetings.fromEmail
+			</div>
+        </div>
+
+        <div class="form-group row">
+            <h2 class="col-2">From: <br/></h2>
+            <div class="col-10 preview">
+				@Model.bridgeGreetings.toName<br/>
+				@Model.bridgeGreetings.toEmail
+            </div>
+        </div>
+
+		<div class="form-group row">
+			<h2 class="col-2">Subject: <br/></h2>
+            <div class="col-10 preview">
+				@Model.bridgeGreetings.subject
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<h2 class="col-2">Message: <br/></h2>
+            <div class="col-10 preview">
+				@Model.bridgeGreetings.message
+			</div>
 		</div>
 	</div>
 
-        <div class="form-group">
-            <label asp-for="bridgeGreetings.fromEmail" class="col-2"></label>
-            <div class="col-10">
-			@Model.bridgeGreetings.fromEmail
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="bridgeGreetings.toName" class="col-2"></label>
-            <div class="col-10">
-            @Model.bridgeGreetings.toName
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="bridgeGreetings.toEmail" class="col-2"></label>
-            <div class="col-10">
-            @Model.bridgeGreetings.toEmail
-            </div>
-        </div>
-
-           <div class="form-group">
-            <label asp-for="bridgeGreetings.subject" class="col-2"></label>
-            <div class="col-10">
-			@Model.bridgeGreetings.subject
-            </div>
-        </div>
-        
-
-     <div class="form-group">
-                        <label asp-for="bridgeGreetings.message" class="col-2"></label>
-                        <div class="col-10">
-                        @Model.bridgeGreetings.message
-                        </div>
-                    </div>
-		</div>
-	<div class="panel-footer">
-                <input type="submit" value="Send" class="btn btn-primary" />
-                <a href="/">Edit</a>
-            </div>
-        </div>
-        </div>
-        </div>
+	<div class="panel-footer row">
+		<input type="submit" value="Send" class="btn btn-primary" style="margin-right: 50%;"/>
+		<h2 style="vertical-align:center;"><a href="/">Go Back</a></h2>
+</div>

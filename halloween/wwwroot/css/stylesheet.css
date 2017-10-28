@@ -4,6 +4,14 @@ body {
     font-size: 14px;
 }
 
+.preview {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    text-transform: none;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
 a {
 }
 
@@ -22,6 +30,16 @@ h1 {
     text-decoration: none;
     text-transform: uppercase;
     color: #DA8230;
+}
+
+h2 {
+    font-size: 22px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #DA8230;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 2px;
 }
 
 @media screen and (min-width: 768px) {
@@ -49,8 +67,11 @@ h1 {
     }
 
 textarea {
+    padding: 20px;
     resize: vertical;
     letter-spacing: 2px;
+    margin: 10px auto 10px;
+    text-transform: uppercase;
 }
 
 input {
@@ -71,8 +92,8 @@ label {
     text-transform: uppercase;
     font-family: inherit;
     font-weight: bold;
-    font-size: 1em;
-    letter-spacing: 2px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
 }
 
 .img-responsive {
@@ -108,4 +129,13 @@ label {
 .text-danger {
     color: #f93c11;
     text-transform: uppercase;
+}
+
+.btn-primary {
+    color: #000;
+    background-color: #DA8230;
+    border-color: #DA8230;
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bolder;
 }
