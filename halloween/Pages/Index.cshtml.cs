@@ -21,21 +21,19 @@ namespace halloween.Pages
         // PREVIEW MODE (AFTER SUBMITTING)
         public async Task<IActionResult> OnPost()
         {
-            isPreviewPage = true;
-
             if (await isValid())
             {
                 if (ModelState.IsValid)
                 {
-                    try
-                    {
-                        // ADD TO DATABASE
-                        //_context.__MODEL__.Add(__MODEL__);
-                        //_context.SaveChanges();
+                    //try
+                    //{
+                    // ADD TO DATABASE
+                    _myDB.Greetings.Add(bridgeGreetings);
+                    _myDB.SaveChanges();
 
-                        return RedirectToPage("Preview");
-                    }
-                    catch { }
+                    return RedirectToPage("Preview", new { id = bridgeGreetings.ID });
+                    //}
+                    //catch { }
                 }
             }
             else
@@ -49,6 +47,14 @@ namespace halloween.Pages
         // BRIDGE TO GREETINGS MODEL
         [BindProperty]
         public Greetings bridgeGreetings { get; set; }
+
+        //CONNECT MY DATABASE TO THIS MODEL
+        private DB _myDB;
+        public IndexModel(DB myDB)
+        {
+            _myDB = myDB;
+        }
+
 
         // TEST IF USER IS LOOKING AT PREVIEW OR FORM
         public bool isPreviewPage { get; set; }
