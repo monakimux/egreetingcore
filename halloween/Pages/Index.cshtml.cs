@@ -28,6 +28,9 @@ namespace halloween.Pages
                     //try
                     //{
                     // ADD TO DATABASE
+                    bridgeGreetings.createDate = DateTime.Now.ToString();
+                    bridgeGreetings.createIP = this.HttpContext.Connection.RemoteIpAddress.ToString();
+                    bridgeGreetings.message = bridgeGreetings.message.Replace("\n", "<br/>");
                     _myDB.Greetings.Add(bridgeGreetings);
                     _myDB.SaveChanges();
 

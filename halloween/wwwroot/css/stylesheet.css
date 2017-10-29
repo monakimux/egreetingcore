@@ -137,6 +137,12 @@ label {
     text-tranform: uppercase;
 }
 
+.btn:hover {
+    color: #DA8230;
+    background-color: #000;
+    border-color: #000;
+}
+
 .next {
     margin-right: 3em;
 }
@@ -146,12 +152,11 @@ label {
     font-size: 1.2em;
     vertical-align: bottom;
     text-transform: uppercase;
+    font-weight: bolder;
 }
 
 .goback {
     color: #0026ff;
-    background-color: none;
-    border-color: none;
     font-size: 1.2em;
     font-weight: bolder;
     text-tranform: uppercase;
