@@ -12,20 +12,13 @@
         </div>
         <!--Form-->
         <div class="col-xs-12 col-md-4 textbox">
-            @if (Model.isPreviewPage)
-            {
-                @Html.Partial("_Preview")
-            }
-            else
-            {
-                @Html.Partial("_Form")
+			@Html.Partial("_Form")
+		</div>
+    </div>
+</div>
 
-                @section Scripts {
+@section Scripts {
                     <script src="~/js/ww-form-character-countdown.js"></script>
                     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
                     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
                 }
-			}
-		</div>
-    </div>
-</div>

@@ -51,6 +51,8 @@ namespace halloween.Model
         [Required(ErrorMessage = "Required")]
         public string createIP { get; set; }
 
+        public string reCaptcha { get; set; }
+
     }
 
 }

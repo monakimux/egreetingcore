@@ -1,11 +1,18 @@
 ﻿@page
-@model halloween.Pages.PreviewModel
-@{
-    ViewData["Title"] = "Preview";
-}
+@model PreviewModel
 
-<h2>Preview</h2>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<div class="container">
+    <h1 class="text-center">Send this Halloween Greeting to a friend!</h1>
+    <div class="row">
+        <!--Card-->
+        <div class="col-xs-12 col-md-8 mediabox">
+            <div class="embed-responsive embed-responsive-4by3">
+            <img src="~/images/halloween.gif" class="img-responsive" alt="ghouls" style="width:100%">
+            </div>
+        </div>
+        <!--Form-->
+        <div class="col-xs-12 col-md-4 textbox">
+            @Html.Partial("_Preview")
+        </div>
+    </div>
+</div>

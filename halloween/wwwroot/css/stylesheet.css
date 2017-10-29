@@ -2,13 +2,14 @@ body {
     font-family: 'Oswald', sans-serif;
     background-color: #000;
     font-size: 14px;
+    letter-spacing: 1px;
 }
 
 .preview {
     font-family: 'Oswald', sans-serif;
     font-size: 18px;
     text-transform: none;
-    letter-spacing: 1px;
+    letter-spacing: inherit;
     display: inline-block;
 }
 
@@ -33,7 +34,7 @@ h1 {
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 1.5em;
     text-decoration: none;
     text-transform: uppercase;
     color: #DA8230;
@@ -53,36 +54,31 @@ h2 {
     width: 100%;
     border: 3px solid #DA8230;
     border-radius: 0;
-    /*padding: 10px;
-    margin: 0px auto 20px;*/
     background: #F1C795;
     font-family: inherit;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
     .form-control::placeholder {
-        text-transform: uppercase;
+        text-transform: none;
         color: #4F1906;
+        font-size: 1.2em;
     }
 
 textarea {
-    padding: 20px;
     resize: vertical;
-    letter-spacing: 2px;
-    margin: 10px auto 10px;
-    text-transform: uppercase;
+    letter-spacing: inherit;
+    margin: 3px auto 10px;
 }
 
 input {
-    padding: 20px;
-    margin: 10px auto 10px;
+    margin: 3px auto 10px;
     border-radius: 100px;
-    letter-spacing: 2px;
+    letter-spacing: inherit;
     background-color: #DA8230;
     border: none;
     color: #fff;
-    text-transform: uppercase;
     font-family: inherit;
     font-weight: bold;
     font-size: 1.5em;
@@ -92,8 +88,8 @@ label {
     text-transform: uppercase;
     font-family: inherit;
     font-weight: bold;
-    font-size: 0.8em;
-    letter-spacing: 1px;
+    font-size: 0.9em;
+    letter-spacing: inherit;
 }
 
 .img-responsive {
@@ -135,7 +131,28 @@ label {
     color: #000;
     background-color: #DA8230;
     border-color: #DA8230;
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 1.5em;
     font-weight: bolder;
+    text-tranform: uppercase;
+}
+
+.next {
+    margin-right: 60%;
+}
+
+.other {
+    display: inline;
+    font-size: 1.2em;
+    vertical-align: bottom;
+    text-transform: uppercase;
+}
+
+.goback {
+    color: #0026ff;
+    background-color: none;
+    border-color: none;
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-tranform: uppercase;
 }

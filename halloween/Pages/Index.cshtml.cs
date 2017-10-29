@@ -19,10 +19,31 @@ namespace halloween.Pages
         }
 
         // PREVIEW MODE (AFTER SUBMITTING)
-        public void OnPost()
+        public async Task<IActionResult> OnPost()
         {
             isPreviewPage = true;
 
+            if (await isValid())
+            {
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        // ADD TO DATABASE
+                        //_context.__MODEL__.Add(__MODEL__);
+                        //_context.SaveChanges();
+
+                        return RedirectToPage("Preview");
+                    }
+                    catch { }
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("bridgeGreetings.Recaptcha", "Please prove that you're a human!");
+            }
+
+            return Page();
         }
 
         // BRIDGE TO GREETINGS MODEL
@@ -46,6 +67,7 @@ namespace halloween.Pages
                     var values = new Dictionary<string, string>();
                     values.Add("secret", "6LeO8zAUAAAAABP2UsvP6fZlS3TlkiVzlwD8XFzX");
                     values.Add("response", response);
+                    values.Add("remoteip", this.HttpContext.Connection.RemoteIpAddress.ToString());
 
                     var query = new FormUrlEncodedContent(values);
 
