@@ -11,7 +11,7 @@ namespace halloween.Model
     {
         //ADD A UNIQUE IDENTIFIER
         [Key]
-        public int ID { get; set; }
+        public int? ID { get; set; }
 
         [DisplayName("Your name")]
         [Display(Prompt = "Your name")]
@@ -45,15 +45,16 @@ namespace halloween.Model
         [Required(ErrorMessage = "Message Required")]
         public string message { get; set; }
 
+        [DisplayName("I agree")]
         [Required(ErrorMessage = "Required")]
         [StringLength(4, MinimumLength = 1, ErrorMessage = "You must agree to our terms and conditions")]
         public string tandcagree { get; set; }
 
-        [Required(ErrorMessage = "Required")]
         public string createDate { get; set; }
-
-        [Required(ErrorMessage = "Required")]
         public string createIP { get; set; }
+
+        public string sendDate { get; set; }
+        public string sendIP { get; set; }
 
         public string reCaptcha { get; set; }
 

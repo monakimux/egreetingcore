@@ -28,7 +28,14 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="" />
     <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="" /
+    <meta name="twitter:image" content="" />
+
+	<!-- TOUCHSCREEN ICONS -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/icons/icon_144x144.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/icons/icon_114x114.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/icons/icon_72x72.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/images/icons/icon_57x57.jpg">
+			
     
     <!-- FAVICON  -->
     <link rel="icon" href="" type="image/x-icon" />
@@ -46,9 +53,8 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald|Permanent+Marker" rel="stylesheet">
         
     <!-- CUSTOM CSS --> 
-    <link rel="stylesheet" href="/css/stylesheet.css">
-
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+    <link rel="stylesheet" href="/css/site.css">
+		
 </head>
 
 <body>
@@ -66,7 +72,19 @@
 
     
     <!-- BEGIN: BODY HTML -->
-    @RenderBody()
+<div class="container">
+    <h1 class="text-center">Send this Halloween Greeting to a friend!</h1>
+    <div class="row">
+        <div class="col-xs-12 col-md-8 mediabox">
+            <div class="embed-responsive embed-responsive-4by3">
+              @Html.Partial("_Card")
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-4 textbox">
+            @RenderBody()
+        </div>
+    </div>
+</div>
     <!-- END: BODY HTML -->
 
 
@@ -77,7 +95,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 		 @RenderSection("Scripts", required: false)
-		
+         
 </body>
 
 </html>

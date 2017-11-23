@@ -15,7 +15,6 @@ namespace halloween.Pages
         // DEFAULT MODE
         public void OnGet()
         {
-            isPreviewPage = false;
         }
 
         // PREVIEW MODE (AFTER SUBMITTING)
@@ -25,18 +24,33 @@ namespace halloween.Pages
             {
                 if (ModelState.IsValid)
                 {
-                    //try
-                    //{
-                    // ADD TO DATABASE
-                    bridgeGreetings.createDate = DateTime.Now.ToString();
-                    bridgeGreetings.createIP = this.HttpContext.Connection.RemoteIpAddress.ToString();
-                    bridgeGreetings.message = bridgeGreetings.message.Replace("\n", "<br/>");
-                    _myDB.Greetings.Add(bridgeGreetings);
-                    _myDB.SaveChanges();
+                    try
+                    {
+                        // DB-RELATED: CUSTOMIZE VALUES TO BE ADDED TO THE DB
+                        bridgeGreetings.createDate = DateTime.Now.ToString();
+                        bridgeGreetings.createIP = this.HttpContext.Connection.RemoteIpAddress.ToString();
+                        bridgeGreetings.message = bridgeGreetings.message.Replace("\n", "<br/>");
 
-                    return RedirectToPage("Preview", new { id = bridgeGreetings.ID });
-                    //}
-                    //catch { }
+
+                        bridgeGreetings.fromEmail = bridgeGreetings.fromEmail.ToLower();
+                        bridgeGreetings.toEmail = bridgeGreetings.toEmail.ToLower();
+                        bridgeGreetings.tandcagree = "true";
+                        bridgeGreetings.message = bridgeGreetings.message.ToLower();
+                        bridgeGreetings.message = bridgeGreetings.message.Replace("fuck", "duck");
+
+
+
+                        // DB-RELATED: ADD NEW RECORD TO THE DATABASE 
+                        _myDB.Greetings.Add(bridgeGreetings);
+                        _myDB.SaveChanges();
+
+                        // DB-RELATED: SEND USER TO THE PREVIEW PAGE SHOWING THE NEW RECORD
+                        return RedirectToPage("Preview", new { id = bridgeGreetings.ID });
+                    }
+                    catch
+                    {
+                        return RedirectToPage("Index");
+                    }
                 }
             }
             else
@@ -59,9 +73,6 @@ namespace halloween.Pages
         }
 
 
-        // TEST IF USER IS LOOKING AT PREVIEW OR FORM
-        public bool isPreviewPage { get; set; }
-
         // RE-CAPTCHA VALIDATION
         private async Task<bool> isValid()
         {
@@ -80,7 +91,6 @@ namespace halloween.Pages
 
                     var query = new FormUrlEncodedContent(values);
 
-
                     var post = client.PostAsync("https://www.google.com/recaptcha/api/siteverify", query);
 
                     var json = await post.Result.Content.ReadAsStringAsync();
@@ -96,10 +106,7 @@ namespace halloween.Pages
             }
             catch { }
 
-
             return false;
         }
-
-
     }
 }

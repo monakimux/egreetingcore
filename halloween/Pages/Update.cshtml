@@ -1,0 +1,19 @@
+﻿@page
+@model UpdateModel
+
+
+
+<form method="post">
+
+    <div class="panel form">
+        <div class="panel-header">Update your greeting</div>
+        <div class="panel-body">
+            @Html.Partial("_Form", Model.bridgeGreetings)
+        </div>
+        <div class="panel-footer text-center">
+            <input type="submit" value="Continue" class="btn btn-primary" />
+            <a href="/" class="btn btn-link">Start Over</a>
+        </div>
+    </div>
+
+</form>

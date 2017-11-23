@@ -1,18 +1,45 @@
 ﻿@page
 @model PreviewModel
 
+<!--ORIGINAL
 <div class="container">
     <h1 class="text-center">Send this Halloween Greeting to a friend!</h1>
     <div class="row">
-        <!--Card-->
+        CARD
         <div class="col-xs-12 col-md-8 mediabox">
             <div class="embed-responsive embed-responsive-4by3">
             <img src="~/images/halloween.gif" class="img-responsive" alt="ghouls" style="width:100%">
             </div>
         </div>
-        <!--Form-->
+        FORM
         <div class="col-xs-12 col-md-4 textbox">
             @Html.Partial("_Preview")
         </div>
     </div>
 </div>
+-->
+
+<div class="panel preview">
+    <div class="panel-header">Confirm your entry is correct</div>
+    <div class="panel-body">
+        @Html.Partial("_Preview", Model.bridgeGreetings)
+    </div>
+    <div class="panel-footer text-center">
+
+        <div class="has-error">@Model.Message</div>
+
+        <form method="post">
+            <input type="hidden" asp-for="@Model.bridgeGreetings.ID" />
+
+            <div class="btn-group">
+                <a href="/update?id=@Model.bridgeGreetings.ID" class="btn btn-primary">Edit</a>
+                <input type="submit" value="Send" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@Model.bridgeGreetings.toName
+@Model.bridgeGreetings.toEmail
+
+
