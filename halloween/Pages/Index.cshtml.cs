@@ -85,7 +85,7 @@ namespace halloween.Pages
                 using (var client = new HttpClient())
                 {
                     var values = new Dictionary<string, string>();
-                    values.Add("secret", "6LeO8zAUAAAAABP2UsvP6fZlS3TlkiVzlwD8XFzX");
+                    values.Add("secret", _configuration["ReCaptcha:PrivateKey"]);
                     values.Add("response", response);
                     values.Add("remoteip", this.HttpContext.Connection.RemoteIpAddress.ToString());
 
